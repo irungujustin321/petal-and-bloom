@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+:root {
+  --cream: #fbf6f0;
+  --blush: #f6e4e2;
+  --rose: #d08a94;
+  --rose-deep: #8b3a4a;
+  --sage: #7d9b76;
+  --gold: #c6a46a;
+  --ink: #3a2a2c;
+}
+
+@theme inline {
+  --color-cream: var(--cream);
+  --color-blush: var(--blush);
+  --color-rose: var(--rose);
+  --color-rose-deep: var(--rose-deep);
+  --color-sage: var(--sage);
+  --color-gold: var(--gold);
+  --color-ink: var(--ink);
+  --font-sans: var(--font-outfit);
+  --font-display: var(--font-cormorant);
+}
+
+body {
+  background-color: var(--cream);
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(243, 214, 216, 0.7), transparent 32%),
+    radial-gradient(circle at 88% 0%, rgba(125, 155, 118, 0.18), transparent 28%),
+    radial-gradient(circle at 80% 90%, rgba(198, 164, 106, 0.18), transparent 30%);
+  color: var(--ink);
+}
+
+.font-display {
+  font-family: var(--font-cormorant), serif;
+}
