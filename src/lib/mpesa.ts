@@ -32,6 +32,7 @@ async function accessToken() {
     cache: "no-store",
   });
   const data = (await res.json()) as { access_token?: string; errorMessage?: string };
+  console.log("DARAJA AUTH RESPONSE:", data);
   if (!res.ok || !data.access_token) {
     throw new Error(data.errorMessage || "Could not get M-Pesa access token");
   }
@@ -66,6 +67,7 @@ export async function initiateStkPush(params: {
   description: string;
 }) {
   const token = await accessToken();
+  console.log("FRESH TOKEN:", token);
   const { shortcode, timestamp, password } = credentials();
   const callback = process.env.MPESA_CALLBACK_URL;
   if (!callback) throw new Error("Missing MPESA_CALLBACK_URL");

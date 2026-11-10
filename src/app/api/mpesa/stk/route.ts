@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
 import { initiateStkPush } from "@/lib/mpesa";
 import { createAdminClient } from "@/lib/supabase/admin";
@@ -39,6 +40,7 @@ export async function POST(request: Request) {
     .rpc("place_order", {
       p_items: body.items,
       p_phone: phone,
+      p_user_id: user.id,
     })
     .single();
   const order = data as Order | null;
