@@ -1,0 +1,2 @@
+[functions.stk-callback]
+verify_jwt = false
